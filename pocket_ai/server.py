@@ -101,10 +101,10 @@ def create_app():
 def run_server():
     """Run the server"""
     host = get_config("server.host")
-    port = get_config("server.port")
+    port = int(os.environ.get("PORT", get_config("server.port")))
     
     logger.info(f"Starting ポケットAI server on {host}:{port}")
-    app.run(host=host, port=port, debug=True)
+    app.run(host=host, port=port, debug=False)
 
 if __name__ == "__main__":
     run_server()

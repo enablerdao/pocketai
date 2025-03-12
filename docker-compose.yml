@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  pocketai:
+    build: .
+    ports:
+      - "54656:54656"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - ./:/app
+    restart: unless-stopped

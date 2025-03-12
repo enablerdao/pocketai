@@ -1,0 +1,17 @@
+{
+  "name": "ポケットAI (Pocket AI)",
+  "description": "A Doraemon-inspired AGI-like agent system designed to help with programming tasks",
+  "repository": "https://github.com/enablerdao/pocketai",
+  "keywords": ["python", "flask", "ai", "agent", "doraemon"],
+  "env": {
+    "ANTHROPIC_API_KEY": {
+      "description": "Your Claude API key",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

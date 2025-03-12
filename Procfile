@@ -1,0 +1,1 @@
+web: python -m pocket_ai --port $PORT --host 0.0.0.0
