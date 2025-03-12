@@ -2,6 +2,8 @@
 
 ポケットAI (Pocket AI) is a Doraemon-inspired AGI-like agent system designed to help with programming tasks. It implements an agent loop (Observe-Judge-Act-Evaluate) to create a software-based autonomous agent that excels at programming.
 
+![Pocket AI Logo](https://via.placeholder.com/150x150.png?text=PocketAI)
+
 ## Features
 
 - 🤖 Agent loop architecture for autonomous operation
