@@ -4,6 +4,9 @@
 
 ![Pocket AI Logo](https://via.placeholder.com/150x150.png?text=PocketAI)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/enablerdao/pocketai)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/enablerdao/pocketai)
+
 ## Features
 
 - 🤖 Agent loop architecture for autonomous operation
@@ -70,6 +73,42 @@ You can configure ポケットAI using command-line arguments:
 4. **Programming Tools**: Tools for executing, analyzing, and searching code
 5. **Web Server**: Provides a user interface for interacting with the agent
 
+## Cloud Deployment
+
+### Deploy to Render
+
+1. Click the "Deploy to Render" button above
+2. Connect your GitHub account
+3. Set the required environment variables:
+   - `ANTHROPIC_API_KEY`: Your Claude API key
+
+### Deploy to Heroku
+
+1. Click the "Deploy to Heroku" button above
+2. Create a new Heroku app
+3. Set the required environment variables:
+   - `ANTHROPIC_API_KEY`: Your Claude API key
+
+### Deploy with Docker
+
+```bash
+# Build the Docker image
+docker build -t pocketai .
+
+# Run the container
+docker run -p 54656:54656 -e ANTHROPIC_API_KEY=your-api-key pocketai
+```
+
+### Deploy with Docker Compose
+
+```bash
+# Set your API key in the environment
+export ANTHROPIC_API_KEY=your-api-key
+
+# Start the services
+docker-compose up -d
+```
+
 ## License
 
 MIT
@@ -77,4 +116,4 @@ MIT
 ## Acknowledgements
 
 - Inspired by Doraemon, the robot cat from the future with a magical pocket
-- Built with Python, Flask, Playwright, and Claude 3.7
+- Built with Python, Flask, Playwright, and Claude 3
