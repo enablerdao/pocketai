@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポケットAI - プログラミングの未来ポケット</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Add Material Design icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="material-icons">smart_toy</span>
+                <h1>ポケットAI</h1>
+            </div>
+            <p class="subtitle">プログラミングの未来ポケット</p>
+        </header>
+
+        <main>
+            <section class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message system">
+                        <div class="message-content">
+                            <p>こんにちは！私はポケットAI、プログラミングのお手伝いをします。何かお手伝いできることはありますか？</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <textarea id="user-input" placeholder="タスクを入力してください..."></textarea>
+                    <button id="send-button" class="send-button">
+                        <span class="material-icons">send</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="tools-container">
+                <div class="tools-header">
+                    <h2>ツール</h2>
+                </div>
+                <div class="tools-list">
+                    <div class="tool-item" data-tool="browser">
+                        <span class="material-icons">language</span>
+                        <span>ブラウザ</span>
+                    </div>
+                    <div class="tool-item" data-tool="code">
+                        <span class="material-icons">code</span>
+                        <span>コード実行</span>
+                    </div>
+                    <div class="tool-item" data-tool="search">
+                        <span class="material-icons">search</span>
+                        <span>コード検索</span>
+                    </div>
+                    <div class="tool-item" data-tool="analyze">
+                        <span class="material-icons">analytics</span>
+                        <span>コード分析</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="modal" id="api-key-modal">
+            <div class="modal-content">
+                <h2>APIキーの設定</h2>
+                <p>Claude 3.7のAPIキーを入力してください：</p>
+                <input type="text" id="api-key-input" placeholder="sk-ant-api03-...">
+                <div class="modal-buttons">
+                    <button id="save-api-key">保存</button>
+                    <button id="cancel-api-key">キャンセル</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="code-modal">
+            <div class="modal-content">
+                <h2>コード実行</h2>
+                <div class="code-editor-container">
+                    <select id="language-select">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                    <textarea id="code-editor" placeholder="コードを入力してください..."></textarea>
+                </div>
+                <div class="code-output" id="code-output">
+                    <div class="output-header">出力:</div>
+                    <pre id="output-content"></pre>
+                </div>
+                <div class="modal-buttons">
+                    <button id="run-code">実行</button>
+                    <button id="close-code-modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>ポケットAI &copy; 2024 - プログラミングの未来ポケット</p>
+            <button id="settings-button" class="settings-button">
+                <span class="material-icons">settings</span>
+            </button>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
